@@ -36,3 +36,70 @@
     transform: rotate(360deg);
   }
 }
+body {
+  font: 14px "Century Gothic", Futura, sans-serif;
+}
+
+ol, ul {
+  padding-left: 30px;
+}
+
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.board-column {
+  column-gap: 1px;
+  column-count: 3;
+}
+.status {
+  margin-bottom: 10px;
+}
+
+.square {
+  background: #fff;
+  border: 1px solid #999;
+  float: left;
+  font-size: 50px;
+  line-height: 34px;
+  height: 100px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 100px;
+}
+
+.square_focus {
+  outline:auto;
+  background: #ddd;
+}
+
+.square:focus {
+  background: rgb(28, 168, 173);
+  font-weight: bolder;
+}
+
+.game {
+  display: flex;
+  flex-direction: row;
+}
+
+.game-info {
+  margin-left: 20px;
+}
+
+.rst-btn {
+  margin: 10px;
+  padding: 10px;
+  color: black;
+  width: 100px;
+  height: 50px;
+  display: none;
+}
+
+.rst-btn_true {
+  display: block;
+}
