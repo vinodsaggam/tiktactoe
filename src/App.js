@@ -9,8 +9,8 @@ function App() {
       <header className="App-header">
         <h1>Tic Tak Toe</h1>
       {/* <Game /> */}
-      {/* <Controls /> */}
-      <TodoControls />
+      <Controls />
+      {/* <TodoControls /> */}
         
       </header>
     </div>
