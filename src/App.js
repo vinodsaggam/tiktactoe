@@ -2,7 +2,6 @@ import './App.css';
 import Game from './TicTakToe';
 import Controls from './Controls';
 import TodoControls from './TodoControls';
-import Check from './Check';
 
 function App() {
   return (
@@ -10,9 +9,8 @@ function App() {
       <header className="App-header">
         <h1>Tic Tak Toe</h1>
       {/* <Game /> */}
-      {/* <Controls /> */}
+      <Controls />
       {/* <TodoControls /> */}
-      <Check />
         
       </header>
     </div>
