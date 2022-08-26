@@ -66,13 +66,13 @@ const Controls = () => {
     <div className="stats">
         Current Player: {player ? "X" : "O"}
         <br/>
-        Winner: {(winner != null) && val.squares[winner[0]]}
+        Winner: {(winner != null) && val.squares[winner[0]]} {val.squares.filter(x => x !== null).length == 9 && (winner == null) && 'Draw'}
     </div>
     <div className="block">
     {sq.map(i => renderSquare(i))}
     </div>
     <div className="status">
-       {winner && <button onClick={() => reset()} className="btn" >Restart</button>}
+       {val.squares.filter(x => x !== null).length == 9  || winner ? <button onClick={() => reset()} className="btn" >Restart</button> : ''}
     </div>
     </>
   )
