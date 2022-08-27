@@ -63,11 +63,9 @@ const Controls = () => {
 
   return (
     <>
-    <div className="stats">
-        Current Player: {player ? "X" : "O"}
-        <br/>
-        Winner: {(winner != null) && val.squares[winner[0]]} {val.squares.filter(x => x !== null).length == 9 && (winner == null) && 'Draw'}
-    </div>
+    <div className="status">Players: "X" and "O"</div>
+    <div className="status">Current Player: {player ? "X" : "O"}</div>
+    <div className="status">Winner: {(winner != null) && val.squares[winner[0]]} {val.squares.filter(x => x !== null).length == 9 && (winner == null) && 'Draw'}</div>
     <div className="block">
     {sq.map(i => renderSquare(i))}
     </div>

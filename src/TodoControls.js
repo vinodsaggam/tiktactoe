@@ -45,13 +45,16 @@ function TodoControls() {
 
     return (
         <>
-            <TodoTask taskRef={TaskRef} addTask={() => handleTask()} text={text} />
-            <ul>{task.map((i, index) => {
+            <TodoTask className='todo-input' taskRef={TaskRef} addTask={() => handleTask()} text={text} />
+            <ul className='todo-ul'>{task.map((i, index) => {
                 const tt = doneTask.filter(ind => { return doneTask[ind] == index })
-                return (<li key={index} className={tt[0] == index ? 'done' : ''}>{i}
-                    <button onClick={() => handleEdit(i, index)} disabled={tt[0] == index ? true : false}>Edit</button>
-                    <button onClick={() => handleDelete(index)}>Delete</button>
-                    <button onClick={() => handleDone(index)} disabled={tt[0] == index ? true : false}>Done</button>
+                return (<li key={index} className={`todo-li ${tt[0] == index ? 'done' : ''}`}>
+                    <span>{i}</span>
+                    <span style={{padding:'10px'}}>
+                    <button className='todo-btn' onClick={() => handleEdit(i, index)} disabled={tt[0] == index ? true : false}>Edit</button>
+                    <button className='todo-btn' onClick={() => handleDelete(index)}>Delete</button>
+                    <button className='todo-btn' onClick={() => handleDone(index)} disabled={tt[0] == index ? true : false}>Done</button>
+                    </span>
                 </li>
                 )
             })}
