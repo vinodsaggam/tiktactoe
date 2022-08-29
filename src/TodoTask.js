@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import "./styles.css"
 
-function TodoTask({addTask,taskRef, text,className}) {
-    const [check,setCheck] = useState(true)
+function TodoTask({addTask,taskRef, text,className,check,setCheck}) {
   return (
     <>
     <div style={{display:'flex'}}>

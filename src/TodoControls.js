@@ -8,6 +8,7 @@ function TodoControls() {
     const [doneTask, setDoneTask] = useState([])
     const [editTask, setEditTask] = useState(null)
     const [text, setText] = useState('Add')
+    const [check,setCheck] = useState(true)
 
     const handleTask = () => {
         const newTask = TaskRef.current.value;
@@ -21,6 +22,7 @@ function TodoControls() {
         }
 
         TaskRef.current.value = null;
+        setCheck(true)
     }
 
     const handleEdit = (i, index) => {
@@ -28,6 +30,7 @@ function TodoControls() {
         setEditTask(index)
         TaskRef.current.focus();
         setText("Update")
+        setCheck(false)
     }
 
     const handleDelete = (index) => {
@@ -45,7 +48,7 @@ function TodoControls() {
 
     return (
         <>
-            <TodoTask className='todo-input' taskRef={TaskRef} addTask={() => handleTask()} text={text} />
+            <TodoTask className='todo-input' taskRef={TaskRef} addTask={() => handleTask()} text={text} check={check} setCheck={setCheck}  />
             <ul className='todo-ul'>{task.map((i, index) => {
                 const tt = doneTask.filter(ind => { return doneTask[ind] == index })
                 return (<li key={index} className={`todo-li ${tt[0] == index ? 'done' : ''}`}>
